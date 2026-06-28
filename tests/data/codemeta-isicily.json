@@ -1,0 +1,97 @@
+{
+    "@context": "https://w3id.org/codemeta/3.0",
+    "applicationCategory": "Digital Epigraphy",
+    "author": [
+        {
+            "name": "King's Digital Lab",
+            "@id": "https://github.com/kingsdigitallab",
+            "@type": "Organization"
+        },
+        {
+            "affiliation": {
+                "name": "King's Digital Lab, King's College London",
+                "@type": "Organization"
+            },
+            "familyName": "Vieira",
+            "givenName": "Miguel",
+            "@id": "_:author_2",
+            "@type": "Person"
+        },
+        {
+            "affiliation": {
+                "name": "King's Digital Lab, King's College London",
+                "@type": "Organization"
+            },
+            "familyName": "Lu",
+            "givenName": "Zihao",
+            "@id": "_:author_3",
+            "@type": "Person"
+        },
+        {
+            "affiliation": {
+                "name": "King's Digital Lab, King's College London",
+                "@type": "Organization"
+            },
+            "familyName": "Ciula",
+            "givenName": "Arianna",
+            "@id": "_:author_4",
+            "@type": "Person"
+        },
+        {
+            "affiliation": {
+                "name": "Faculty of Classics, University of Oxford",
+                "@type": "Organization"
+            },
+            "familyName": "Prag",
+            "givenName": "Jonathan",
+            "@id": "_:author_5",
+            "@type": "Person"
+        }
+    ],
+    "codeRepository": "https://github.com/kingsdigitallab/corpus-building",
+    "dateCreated": "2024-07-02",
+    "dateModified": "2026-06-04",
+    "datePublished": "2026-06-02",
+    "description": "Corpus building edition for the CROSSREADS research project. https://sicily.classics.ox.ac.uk/",
+    "downloadUrl": "https://github.com/kingsdigitallab/corpus-building/releases",
+    "funder": {
+        "name": "ERC",
+        "@type": "Organization"
+    },
+    "isPartOf": "https://sicily.classics.ox.ac.uk/",
+    "keywords": [
+        "digital-epigraphy",
+        "inscriptions",
+        "sicily"
+    ],
+    "license": "https://spdx.org/licenses/MIT",
+    "name": "Corpus building edition",
+    "programmingLanguage": [
+        "JavaScript",
+        "Svelte",
+        "xslt"
+    ],
+    "softwareRequirements": [
+        "sveltekit",
+        "mdsvex",
+        "fontsource/source-sans-pro",
+        "itemsjs",
+        "flexsearch",
+        "leaflet",
+        "maplibre-gl",
+        "openseadragon",
+        "saxon-js",
+        "xml2js",
+        "csv-parse",
+        "vitest"        
+    ],
+    "version": "v0.27.2",
+    "codemeta:contIntegration": {
+        "@id": "https://raw.githubusercontent.com/kingsdigitallab/corpus-building/develop/.github/workflows/frontend.yml"
+    },
+    "continuousIntegration": "https://raw.githubusercontent.com/kingsdigitallab/corpus-building/develop/.github/workflows/frontend.yml",
+    "developmentStatus": "inactive",
+    "funding": "Advanced Grant CROSSREADS (grant agreement no.885040)",
+    "isSourceCodeOf": "CROSSREADS Corpus Building Edition",
+    "@type": "SoftwareSourceCode"
+}
