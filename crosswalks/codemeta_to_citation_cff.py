@@ -1,4 +1,4 @@
-import models.codemeta.v3_1.codemeta_pydantic_desc as cm
+import models.codemeta.v3_1.codemeta_pydantic as cm
 import models.citation_cff.v1_2_0.citation_cff_pydantic as cff
 
 def get_cff_agent(agent: cm.Organization | cm.Person):

@@ -2,7 +2,7 @@
 from pydantic import ValidationError
 from pydantic_yaml import to_yaml_str
 import json
-from models.codemeta.v3_1.codemeta_pydantic_desc import Software
+from models.codemeta.v3_1.codemeta_pydantic import Software
 from crosswalks.codemeta_to_citation_cff import get_citation_file_format_from_codemeta_software
 
 codemeta_path = 'tests/data/codemeta-codemeta-3.0.json'
