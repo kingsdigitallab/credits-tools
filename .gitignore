@@ -25,3 +25,6 @@ build/
 .pytest_cache/
 htmlcov/
 .coverage  
+
+# repo-specific
+models/citation_cff/v1_2_0/schema.json
