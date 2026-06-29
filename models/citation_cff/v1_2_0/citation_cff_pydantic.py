@@ -1310,7 +1310,7 @@ class CitationFileFormat(BaseModel):
         ..., description='The author(s) of the software or dataset.', min_length=1
     )
     cff_version: constr(pattern=r'^1\.2\.0$') = Field(
-        ...,
+        '1.2.0',
         alias='cff-version',
         description='The version of CFF used for providing the citation metadata.',
         examples=['1.2.0'],
@@ -1338,7 +1338,7 @@ class CitationFileFormat(BaseModel):
         description='The URL of the license text under which the software or dataset is licensed (only for non-standard licenses not included in the SPDX License List).',
     )
     message: constr(min_length=1) = Field(
-        ...,
+        "If you use this software, please cite it using these metadata.",
         description='A message to the human reader of the file to let them know what to do with the citation metadata.',
         examples=[
             'If you use this software, please cite it using the metadata from this file.',

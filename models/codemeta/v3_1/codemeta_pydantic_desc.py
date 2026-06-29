@@ -128,7 +128,7 @@ class SoftwareSourceCode(CreativeWork):
 # Main CodeMeta 3.1 Pydantic Model
 # ----------------------------------------------------------------------
 
-class Software(CreativeWork):
+class Software(SoftwareApplication, SoftwareSourceCode):
     """
     Pydantic Model for CodeMeta 3.1 mapped against schemas found in properties_description.csv
     """

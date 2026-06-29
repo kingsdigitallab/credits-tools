@@ -1,8 +1,10 @@
 # Code by Brave AI
 from pydantic import BaseModel, ValidationError
+from pydantic_yaml import to_yaml_str
 from typing import Optional
 import json
 from models.codemeta.v3_1.codemeta_pydantic_desc import Software
+from models.citation_cff.v1_2_0.citation_cff_pydantic import CitationFileFormat, Person, Entity
 
 codemeta_path = 'tests/data/codemeta-codemeta-3.0.json'
 codemeta_path = 'tests/data/codemeta-isicily.json'
@@ -21,3 +23,26 @@ except ValidationError as e:
     print("Validation failed:")   
     for error in e.errors():
         print(error)
+
+def convert_agent(agent):
+    if agent.type_ == 'Organization':
+        ret = {
+            "name": agent.name,
+        }
+        ret = Entity(**ret)
+    else:
+        ret = {
+            "given-names": agent.givenName,
+            "family-names": agent.familyName,
+        }
+        ret = Person(**ret)
+    return ret
+
+data = {
+    "authors": [convert_agent(a) for a in codemeta_software.author],
+    "title": codemeta_software.name,
+    "repository": codemeta_software.codeRepository
+}
+citation_cff = CitationFileFormat(**data)
+
+print(to_yaml_str(citation_cff, exclude_none=True))

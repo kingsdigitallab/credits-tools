@@ -1,4 +1,5 @@
 pydantic
 pyld
 datamodel-code-generator
+pydantic_yaml
 
