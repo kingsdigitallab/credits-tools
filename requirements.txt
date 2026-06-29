@@ -1,5 +1,6 @@
-pydantic
-pyld
-datamodel-code-generator
-pydantic_yaml
+pydantic                    # to encode cff and codemeta specifications into pydantic models
+pyld                        # TODO: check what this is needed for
+datamodel-code-generator    # to convert cff json-schema into Pydantic models
+pydantic_yaml               # to serialise cff model instance into yaml
+pydantic2-schemaorg         # schema.org classes already encoded as Pydantic model
 
