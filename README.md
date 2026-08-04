@@ -10,6 +10,11 @@ Returns 0 status if the conversion was completed
 
 Any input or output which is invalid according to their resepctive standard causes an error.
 
+## git action
+
+This repository also has a git action. 
+And [a sample workflow](workflows/update-citation.yml) you can copy into your own repository.
+
 ## Pre-requisites
 
 ### install python environment
@@ -19,3 +24,4 @@ python -m venv venv
 source venv/bin/activate
 pip install -f requirements.txt
 ```
+
