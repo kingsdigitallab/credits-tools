@@ -4,6 +4,18 @@
         "SoftwareSourceCode",
         "SoftwareApplication"
     ],
+    "author": [
+        {
+            "affiliation": {
+                "name": "King's Digital Lab",
+                "@type": "Organization"
+            },
+            "familyName": "Noel",
+            "givenName": "Geoffroy",
+            "@id": "_:author_1",
+            "@type": "Person"
+        }
+    ],
     "codeRepository": "https://github.com/kingsdigitallab/credits-tools",
     "dateCreated": "2026-06-28",
     "dateModified": "2026-08-04",
