@@ -1,0 +1,39 @@
+{
+    "@context": "https://w3id.org/codemeta/3.0",
+    "@type": [
+        "SoftwareSourceCode",
+        "SoftwareApplication"
+    ],
+    "codeRepository": "https://github.com/kingsdigitallab/credits-tools",
+    "dateCreated": "2026-06-28",
+    "dateModified": "2026-08-04",
+    "description": "Tools to manage software credits",
+    "downloadUrl": "https://github.com/kingsdigitallab/credits-tools/releases",
+    "license": "https://spdx.org/licenses/MIT",
+    "name": "credits-tools",
+    "programmingLanguage": "Python",
+    "runtimePlatform": "Python>=3.14",
+    "softwareRequirements": [
+        {
+            "name": "pydantic                    # to encode cff and codemeta specifications into pydantic models",
+            "@type": "SoftwareApplication"
+        },
+        {
+            "name": "pyld                        # TODO: check what this is needed for",
+            "@type": "SoftwareApplication"
+        },
+        {
+            "name": "datamodel-code-generator    # to convert cff json-schema into Pydantic models",
+            "@type": "SoftwareApplication"
+        },
+        {
+            "name": "pydantic_yaml               # to serialise cff model instance into yaml",
+            "@type": "SoftwareApplication"
+        },
+        {
+            "name": "pydantic2-schemaorg         # schema.org classes already encoded as Pydantic model",
+            "@type": "SoftwareApplication"
+        }
+    ],
+    "issueTracker": "https://api.github.com/repos/kingsdigitallab/credits-tools/issues"
+}
