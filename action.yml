@@ -20,7 +20,7 @@ runs:
     - name: Install Dependencies
       run: pip install -r $GITHUB_ACTION_PATH/requirements.txt
       shell: bash
-      
+
     - name: Run Conversion Script
-      run: python ${{ github.action_path }}/codemeta-convert.py -f ${{ inputs.codemeta-path }} 1> ${{ inputs.cff-path }}
+      run: python ${{ github.action_path }}/codemeta_convert.py -f ${{ inputs.codemeta-path }} 1> ${{ inputs.cff-path }}
       shell: bash
