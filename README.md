@@ -13,7 +13,7 @@ Any input or output which is invalid according to their resepctive standard caus
 ## git action
 
 This repository also has a git action. 
-And [a sample workflow](workflows/update-citation.yml) you can copy into your own repository.
+And [a sample workflow](.github/workflows/update-citation.yml) you can copy into your own repository.
 
 ## Pre-requisites
 
