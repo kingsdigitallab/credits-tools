@@ -28,3 +28,4 @@ htmlcov/
 
 # repo-specific
 models/citation_cff/v1_2_0/schema.json
+tests/data/out
