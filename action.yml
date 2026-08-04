@@ -1,0 +1,26 @@
+name: 'Codemeta to CITATION CFF Converter'
+description: 'Converts codemeta.json to CITATION.cff using a Python script'
+inputs:
+  codemeta-path:
+    description: 'Path to the codemeta.json file'
+    required: false
+    default: 'codemeta.json'
+  cff-path:
+    description: 'Path to output CITATION.cff'
+    required: false
+    default: 'CITATION.cff'
+runs:
+  using: 'composite'
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.14'
+
+    - name: Install Dependencies
+      run: pip install -r $GITHUB_ACTION_PATH/requirements.txt
+      shell: bash
+      
+    - name: Run Conversion Script
+      run: python ${{ github.action_path }}/codemeta-convert.py -f ${{ inputs.codemeta-path }} 1> ${{ inputs.cff-path }}
+      shell: bash
