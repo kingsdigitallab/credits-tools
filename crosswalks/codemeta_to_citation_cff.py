@@ -21,7 +21,7 @@ def get_citation_file_format_from_codemeta_software(codemeta_software: cm.Softwa
     soft = codemeta_software
     
     cff_data = {
-        # "authors": [get_cff_agent(a) for a in soft.author],
+        "authors": [get_cff_agent(a) for a in soft.author],
         "title": soft.name,
         "repository": soft.codeRepository
     }

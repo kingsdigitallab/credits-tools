@@ -4,7 +4,7 @@ status: quick prototype
 
 ## convert a codemeta.json file into citation.cff
 
-`python validate-codemeta.py tests/data/in/codemeta-isciliy.json 2>tests/data/out/errors.json 1>tests/data/out/CITATION.cff`
+`python validate-codemeta.py -f tests/data/in/codemeta-isciliy.json 2>tests/data/out/errors.json 1>tests/data/out/CITATION.cff`
 
 Returns 0 status if the conversion was completed
 

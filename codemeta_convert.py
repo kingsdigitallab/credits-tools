@@ -8,20 +8,42 @@ import sys
 
 status = 1
 
-# codemeta_path = 'tests/data/in/codemeta-codemeta-3.0.json'
-codemeta_path = 'tests/data/in/codemeta-isicily.json'
+def convert(codemeta_path: str):
+    # codemeta_path = 'tests/data/in/codemeta-codemeta-3.0.json'
+    # codemeta_path = 'tests/data/in/codemeta-isicily.json'
 
-# Load and parse the JSON file
-with open(codemeta_path, 'r') as f:
-    codemeta_data = json.load(f)
+    ret = 1
 
-codemeta_software = get_pydantic_model_from_dict(codemeta_data, Software)
+    codemeta_data = None
 
-if codemeta_software:
-    citation_cff = get_citation_file_format_from_codemeta_software(codemeta_software)
+    # Load and parse the JSON file
+    try:
+        with open(codemeta_path, 'r') as f:
+            codemeta_data = json.load(f)
+    except Exception as e:
+        print(f'ERROR: {e}', sys.stderr)
 
-    if citation_cff:
-        print(to_yaml_str(citation_cff, exclude_none=True))
-        status = 0
+    if codemeta_data:
+        codemeta_software = get_pydantic_model_from_dict(codemeta_data, Software)
+
+        if codemeta_software:
+            citation_cff = get_citation_file_format_from_codemeta_software(codemeta_software)
+
+            if citation_cff:
+                print(to_yaml_str(citation_cff, exclude_none=True))
+                ret = 0
+
+    return ret
+
+import argparse
+
+parser = argparse.ArgumentParser(description='Codemeta converter')
+parser.add_argument('--file', '-f', 
+                    default='codemeta.json', 
+                    help='Path to the input file (default: input.txt)')
+args = parser.parse_args()
+
+if args.file:
+    status = convert(args.file)
 
 sys.exit(status)
