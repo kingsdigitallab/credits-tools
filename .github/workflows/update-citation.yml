@@ -1,0 +1,28 @@
+name: Update CITATION.cff from Codemeta
+
+on:
+  push:
+    paths:
+      - 'codemeta.json'
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Needed to commit changes back to the repo
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Codemeta Converter Action
+        uses: kingsdigitallab/credits-tools@main 
+        with:
+          codemeta-path: 'codemeta.json'
+          cff-path: 'CITATION.cff'
+
+      - name: Check for changes and commit
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'Auto-update CITATION.cff from codemeta.json'
+          file_pattern: 'CITATION.cff'
