@@ -3,4 +3,4 @@ pyld==3.1.0                         # TODO: check what this is needed for
 datamodel-code-generator==0.66.0    # to convert cff json-schema into Pydantic models
 pydantic_yaml==1.7.0                # to serialise cff model instance into yaml
 pydantic2-schemaorg==0.3.0          # schema.org classes already encoded as Pydantic model
-
+cffconvert==2.0.0                   # for CITATION.cff -> bibtex output
