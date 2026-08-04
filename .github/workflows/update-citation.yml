@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'codemeta.json'
+  workflow_dispatch:  # enables manual triggers
 
 jobs:
   convert:
