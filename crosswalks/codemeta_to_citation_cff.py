@@ -144,14 +144,14 @@ def get_citation_file_format_from_codemeta_software(codemeta_software: cm.Softwa
     soft = codemeta_software
 
     cff_data = {
-        "authors": [get_cff_agent(a) for a in soft.author or []],
+        "version": get_cff_version(soft),
         "title": soft.name,
-        "repository-code": soft.codeRepository,
         "type": get_cff_type(soft.type_),
+        "authors": [get_cff_agent(a) for a in soft.author or []],
         "abstract": soft.description,
         "keywords": soft.keywords,
-        "version": get_cff_version(soft),
         "date-released": soft.datePublished,
+        "repository-code": soft.codeRepository,
         "repository-artifact": soft.downloadUrl,
     }
 

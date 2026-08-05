@@ -1,22 +1,30 @@
-# Code by Brave AI
+import json
+import sys
+
+from cffconvert import Citation
 from pydantic import ValidationError
 from pydantic_yaml import to_yaml_str
-import json
+
+from crosswalks.codemeta_to_citation_cff import (
+    get_citation_file_format_from_codemeta_software,
+    get_pydantic_model_from_dict,
+)
 from models.codemeta.v3_1.codemeta_pydantic import Software
-from crosswalks.codemeta_to_citation_cff import get_citation_file_format_from_codemeta_software, get_pydantic_model_from_dict
-import sys
-import subprocess
 
 status = 1
 
 def validate_cff(citation_cff_yaml_str):
-    # Assuming the CITATION.cff file is in the current directory
-    result = subprocess.run(["cffconvert", "--validate"], capture_output=True, text=True)
-
-    ret = result.returncode == 0
-    
-    if not ret:
-        print("ERROR: cffconvert validation failed.", result.stderr, file=sys.stderr)
+    ret = False
+    try:
+        # Initialize the Citation object with raw text instead of a file path
+        citation = Citation(cffstr=citation_cff_yaml_str)
+        
+        # Run the built-in validation check
+        citation.validate()
+        
+        ret = True
+    except Exception as e:
+        print(f"ERROR: cffconvert error occurred during parsing: {e}", file=sys.stderr)
 
     return ret
 
@@ -42,7 +50,7 @@ def convert(codemeta_path: str):
             citation_cff = get_citation_file_format_from_codemeta_software(codemeta_software)
 
             if citation_cff:
-                citation_cff_yaml_str = to_yaml_str(citation_cff, exclude_none=True)
+                citation_cff_yaml_str = to_yaml_str(citation_cff, by_alias=True, exclude_none=True)
                 print(citation_cff_yaml_str)
                 
                 if validate_cff(citation_cff_yaml_str):
