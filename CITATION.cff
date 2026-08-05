@@ -1,9 +1,13 @@
+abstract: Tools to manage software credits
 authors:
-- family_names: Noel
-  given_names: Geoffroy
-cff_version: 1.2.0
+- affiliation: King's Digital Lab
+  family-names: Noel
+  given-names: Geoffroy
+cff-version: 1.2.0
+license: MIT
 message: If you use this software, please cite it using these metadata.
-repository: https://github.com/kingsdigitallab/credits-tools
+repository-artifact: https://github.com/kingsdigitallab/credits-tools/releases
+repository-code: https://github.com/kingsdigitallab/credits-tools
 title: credits-tools
 type: software
 
